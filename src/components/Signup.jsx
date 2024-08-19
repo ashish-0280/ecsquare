@@ -11,7 +11,7 @@ function Signup() {
   return (
     <>
     <div>
-    <div className='flex h-screen items-center justify-center'>
+    <div className='flex m-6 h-screen items-center justify-center'>
         <div className='card bg-base-100 w-90 shadow-xl md:ml-12'>
             <form onSubmit={handleSubmit(onSubmit)} method="card">
             {/* if there is a button in form, it will close the modal */}
