@@ -4,7 +4,7 @@ function Card() {
   return (
     <>
         <div className='mt-28 ml-4 flex flex-col md:flex-row md:space-x-12 space-y-8 md:space-y-0'>
-            <div className="card bg-white w-90 shadow-xl md:ml-12 hover:scale-110 duration-150">
+            <div className="card bg-base-100 w-90 shadow-xl md:ml-12 hover:scale-110 duration-150">
                 <figure>
                 <img
                     className='w-50'
@@ -24,7 +24,7 @@ function Card() {
                 </div>
             </div>
 
-            <div className="card bg-white w-90 shadow-xl md:ml-12 hover:scale-110 duration-150">
+            <div className="card bg-base-100 w-90 shadow-xl md:ml-12 hover:scale-110 duration-150">
                 <figure>
                 <img
                     className='w-50'
@@ -44,7 +44,7 @@ function Card() {
                 </div>
             </div>
 
-            <div className="card bg-white w-90 shadow-xl md:ml-12 hover:scale-110 duration-150">
+            <div className="card bg-base-100 w-90 shadow-xl md:ml-12 hover:scale-110 duration-150">
                 <figure>
                 <img
                     className='w-50'
