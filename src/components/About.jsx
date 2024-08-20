@@ -8,7 +8,7 @@ function About() {
         <div>
           <Navbar />
         </div>
-        <div className='max-w-screen-2xl container mx-auto md:px-20 px-4 justify-center items-center mt-28'>
+        <div className='max-w-screen-2xl container mx-auto md:px-20 px-4 justify-center items-center mt-36'>
           <div className='font-extrabold text-purple-500 text-4xl mb-14'>
            About EC<sup>2</sup>
           </div>
