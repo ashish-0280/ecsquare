@@ -36,7 +36,7 @@ function Navbar() {
     
                 </ul>
                 </div>
-                <a className="md:text-3xl font-medium cursor-pointer text-xl">EC Square <br /> <span className='text-base'>(The Coaching of Concepts)</span></a>
+                <a className="md:text-3xl font-medium cursor-pointer text-lg">EC Square <br /> <span className='text-sm'>(The Coaching of Concepts)</span></a>
             </div>
             <div className="navbar-end space-x-5">
             <div className="navbar-center hidden lg:flex">
