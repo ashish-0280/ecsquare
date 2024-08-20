@@ -38,10 +38,10 @@ function Signup() {
                 {errors.password && <span className='text-red-600 text-sm'>This field is required</span>}
             </div>
             <div className='flex flex-row '>
-            <div className='md:w-24 m-3 md:text-base w-44 md:py-4 rounded-md p-6 text-lg md:px-4 bg-blue-500 hover:bg-blue-700 text-white mt-6'>
+            <div className=' bg-blue-500 hover:bg-blue-700 h-12 w-28 rounded-md text-white px-5 py-3 m-3'>
                 <button>Sign up</button>
             </div>
-            <div className='md:ml-32 ml-14 mt-8 p-4 hover:scale-105 duration-100'>
+            <div className='md:ml-32 ml-14 md:mt-4 p-4 hover:scale-105 duration-100'>
             <p>Already Registered? <a href="/" className='text-blue-500 underline'>Login</a></p>
             </div>
             </div>
