@@ -48,7 +48,7 @@ function Footer() {
                 </div>
             </nav>
             <aside>
-                <p>Copyright © {new Date().getFullYear()} - All right reserved by Ecsquare</p>
+                <p>Copyright © {new Date().getFullYear()} - All right reserved by EC<sup>2</sup></p>
             </aside>
             </footer>
         </div>
