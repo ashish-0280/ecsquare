@@ -5,8 +5,8 @@ function Navbar() {
         <>
                     <li><a href='/'>Home</a></li>
                     <li><a href='courses'>Courses</a></li>
-                    <li><a href='about'>About us</a></li>
-                    <li><a href='contact'>Contact</a></li>
+                    <li><a href='contact'>Contact us</a></li>
+                    <li><a href='about'>About EC Square</a></li>
     </>
     );
   return (
@@ -36,7 +36,7 @@ function Navbar() {
     
                 </ul>
                 </div>
-                <a className="md:text-3xl font-medium cursor-pointer text-lg">EC Square <br /> <span className='text-sm'>(The Coaching of Concepts)</span></a>
+                <a className="md:text-3xl font-medium cursor-pointer text-lg mt-3">EC<sup>2</sup><span className='text-sm'>(The Coaching of Concepts)</span></a>
             </div>
             <div className="navbar-end space-x-5">
             <div className="navbar-center hidden lg:flex">
