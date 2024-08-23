@@ -1,14 +1,38 @@
 import React from 'react'
 import { useForm } from "react-hook-form"
-
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 function Login() {
+  
+  const navigate = useNavigate();
+  
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm()
 
-  const onSubmit = (data) => console.log(data)
+const onSubmit = async (data) => {
+    try{
+      await axios.post('http://localhost:5000/login', data, {withCredentials: true});
+      alert("successfully Logged in");
+      window.location.href = "/";
+
+    } catch(error){
+      res.status(400).json({message: 'Incorrect Email or Password'});
+      alert('Incorrect Email or Password');
+      window.location.href = "/";
+
+    }
+  }
+  const handleLogout = async (data) => {
+    try{
+      await axios.post("http://localhost:5000/logout", data, {withCredentials: true});
+      alert("Logged out successfully");
+    } catch(error){
+      alert("Something went wrong!!");
+    }
+  }
   return (
     <>
         <div>
@@ -43,11 +67,11 @@ function Login() {
         {errors.password && <span className='text-red-600 text-sm'>This field is required</span>}
     </div>
     <div className='flex flex-row '>
-    <div className='md:w-20 w-24 h-10 rounded-md px-3 md:px-4 py-2 md:py-2 bg-blue-500 hover:bg-blue-700 text-white mt-10'>
+    <div className='md:w-20 w-24 rounded-md px-3 md:px-4 py-4 md:py-2 bg-blue-500 hover:bg-blue-700 text-white mt-6'>
         <button>Login</button>
     </div>
-    <div className='md:ml-48 ml-32 mt-8 md:mt-14 hover:scale-105 duration-100'>
-    <p>Not registered? <a href="/signup" className='text-blue-500 underline'>Signup</a></p>
+    <div className='ml-48 mt-8 hover:scale-105 duration-100'>
+    <p>Not signed up? <a href="/signup" className='text-blue-500 underline'>Signup</a></p>
     </div>
     </div>
     </div>

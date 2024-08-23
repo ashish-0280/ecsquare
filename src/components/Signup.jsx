@@ -1,17 +1,35 @@
 import React from 'react'
+import { useState } from 'react'
 import { useForm } from "react-hook-form"
+import { useEffect } from "react"
+import axios from 'axios'
 function Signup() {
+    const [message, setMessage] = useState('');
     const {
         register,
         handleSubmit,
         formState: { errors },
       } = useForm()
     
-      const onSubmit = (data) => console.log(data)
+      const onSubmit = async(data) => {
+        try{
+            const response = await axios.post('http://localhost:5000/signup', data, {
+                withCredentials: true,
+            });
+            alert("Signed up successfully, Now Login");
+           console.log(response.data);
+           window.location.href = "/";
+
+        } catch(error){
+            alert("Already Signed Up, Try to Login");
+            console.error(error.response.data);
+            window.location.href = "/";
+        }
+      }
   return (
     <>
     <div>
-    <div className='flex m-6 h-screen items-center justify-center'>
+    <div className='flex h-screen items-center justify-center'>
         <div className='card bg-base-100 w-90 shadow-xl md:ml-12'>
             <form onSubmit={handleSubmit(onSubmit)} method="card">
             {/* if there is a button in form, it will close the modal */}
@@ -38,11 +56,11 @@ function Signup() {
                 {errors.password && <span className='text-red-600 text-sm'>This field is required</span>}
             </div>
             <div className='flex flex-row '>
-            <div className=' bg-blue-500 hover:bg-blue-700 h-12 w-28 rounded-md text-white px-5 py-3 m-3'>
-                <button>Sign up</button>
+            <div className='md:w-24 m-3 w-36 py-4 rounded-md px-7 md:px-4 bg-blue-500 hover:bg-blue-700 text-white mt-6'>
+                <button type='submit'>Sign up</button>
             </div>
-            <div className='md:ml-32 ml-14 md:mt-4 p-4 hover:scale-105 duration-100'>
-            <p>Already Registered? <a href="/" className='text-blue-500 underline'>Login</a></p>
+            <div className='ml-32 mt-8 p-4 hover:scale-105 duration-100'>
+            <p>Already have an account? <a href="/" className='text-blue-500 underline'>Login</a></p>
             </div>
             </div>
             </div>
