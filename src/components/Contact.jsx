@@ -45,11 +45,11 @@ function Contact() {
         <div className='h-screen mt-32'>
           <form onSubmit={handleSubmit(onSubmit)} className="max-w-lg mx-auto p-6 bg-white shadow-md rounded-lg">
             <div className="mb-4">
-              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+              <label className="block text-slate-800 text-sm font-bold mb-2" htmlFor="name">
                 Name
               </label>
               <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight bg-white focus:outline-none focus:shadow-outline"
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-slate-800 leading-tight bg-white focus:outline-none focus:shadow-outline"
                 id="name"
                 type="text"
                 placeholder="Your Name"
@@ -59,7 +59,7 @@ function Contact() {
             </div>
 
             <div className="mb-4">
-              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+              <label className="block text-slate-800 text-sm font-bold mb-2" htmlFor="email">
                 Email
               </label>
               <input
@@ -73,7 +73,7 @@ function Contact() {
             </div>
 
             <div className="mb-4">
-              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="phone">
+              <label className="block text-slate-800 text-sm font-bold mb-2" htmlFor="phone">
                 Phone Number
               </label>
               <input
@@ -87,7 +87,7 @@ function Contact() {
             </div>
 
             <div className="mb-6">
-              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="message">
+              <label className="block text-slate-800 text-sm font-bold mb-2" htmlFor="message">
                 Message
               </label>
               <textarea
