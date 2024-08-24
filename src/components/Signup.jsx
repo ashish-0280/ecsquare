@@ -39,18 +39,18 @@ function Signup() {
             <div>
             <div className='flex flex-col mt-8 space-y-4 p-3'>
                 <span>Name</span>
-                <input type="text" placeholder='Enter Your Name' className='rounded-md border px-3 py-1 outline-none'/>
+                <input type="text" placeholder='Enter Your Name' className='border-none rounded-md px-3 py-1 outline-none'/>
             </div>
             <div className='flex flex-col mt-4 space-y-4 p-3'>
                 <span>Email</span>
-                <input type="text" placeholder='user@gmail.com' className='rounded-md border px-3 py-1 outline-none'
+                <input type="text" placeholder='user@gmail.com' className='rounded-md border-none px-3 py-1 outline-none'
                 {...register("email", { required: true })}
                 />
                 {errors.email && <span className='text-red-600 text-sm'>This field is required</span>}
             </div>
             <div className='flex flex-col space-y-4 mt-4 p-3'>
                 <span>Password</span>
-                <input type="password" placeholder='password' className='rounded-md border px-3 py-1 outline-none'
+                <input type="password" placeholder='password' className='rounded-md border-none px-3 py-1 outline-none'
                 {...register("password", { required: true })}
                 />
                 {errors.password && <span className='text-red-600 text-sm'>This field is required</span>}
@@ -59,8 +59,8 @@ function Signup() {
             <div className='bg-blue-600 h-auto w-auto rounded-md p-2 ml-4 m-8 mt-12'>
                 <button type='submit'>Sign up</button>
             </div>
-            <div className='mt-16 ml-2 hover:scale-105 duration-100'>
-            <p>Already have an account? <a href="/" className='text-blue-500 underline'>Login</a></p>
+            <div className='mt-12 ml-6 hover:scale-105 duration-100'>
+            <p>Already registered? <br /><a href="/" className='text-blue-500 underline'>Login</a></p>
             </div>
             </div>
             </div>

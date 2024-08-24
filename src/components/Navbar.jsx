@@ -36,7 +36,7 @@ function Navbar() {
     
                 </ul>
                 </div>
-                <a className="md:text-4xl font-medium cursor-pointer text-2xl mt-3">EC<sup>2</sup></a>
+                <a className="md:text-4xl font-medium cursor-pointer text-2xl mt-3" href='/'>EC<sup>2</sup></a>
             </div>
             <div className="navbar-end space-x-5">
             <div className="navbar-center hidden lg:flex">

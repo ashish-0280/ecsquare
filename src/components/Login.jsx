@@ -70,7 +70,7 @@ const onSubmit = async (data) => {
     <div className='w-auto h-auto p-2 rounded-md  bg-blue-500 hover:bg-blue-700 text-white mt-6'>
         <button>Login</button>
     </div>
-    <div className='mt-4 ml-44 md:ml-64  hover:scale-105 duration-100'>
+    <div className='mt-4 ml-28 md:ml-64  hover:scale-105 duration-100'>
     <p>Not signed up? <br /><a href="/signup" className='text-blue-500 underline'>Signup</a></p>
     </div>
     </div>
