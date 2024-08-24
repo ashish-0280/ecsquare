@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { useForm } from "react-hook-form"
-import { useEffect } from "react"
+import toast from 'react-hot-toast';
 import axios from 'axios'
 function Signup() {
     const [message, setMessage] = useState('');
@@ -16,14 +16,12 @@ function Signup() {
             const response = await axios.post('http://localhost:5000/user/signup', data, {
                 withCredentials: true,
             });
-            alert("Signed up successfully, Now Login");
            console.log(response.data);
-           window.location.href = "/";
+           toast.success("Signed up successfully, Now Login");
 
         } catch(error){
-            alert("Something went wrong, Try Login!!");
+            toast.error("Something went wrong, Try Login!!");
             console.error(error.response.data);
-            window.location.href = "/";
         }
       }
   return (

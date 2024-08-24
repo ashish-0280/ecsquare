@@ -4,6 +4,7 @@ import Footer from './Footer.jsx';
 import { useState } from 'react';
 import { useForm } from "react-hook-form";
 import axios from 'axios';
+import toast from 'react-hot-toast';
 
 function Contact() {
   const [message, setMessage] = useState('');
@@ -18,11 +19,11 @@ function Contact() {
         const response = await axios.post('http://localhost:5000/user/send', data, {
             withCredentials: true,
         });
-        alert("Sent successfully!!");
+        toast.success("Sent successfully!!");
         console.log(response.data);
         window.location.href = "/";
     } catch (error) {
-        alert("Something went wrong");
+        toast.error("Something went wrong");
 
         // Check if error.response exists before trying to access its properties
         if (error.response) {
@@ -32,8 +33,6 @@ function Contact() {
         } else {
             console.error("Error setting up request:", error.message);
         }
-
-        window.location.href = "/";
     }
 };
 
@@ -91,7 +90,7 @@ function Contact() {
                 Message
               </label>
               <textarea
-                className="shadow appearance-none border border-none bg-zinc-900 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32"
+                className="shadow appearance-none border border-none bg-zinc-900 rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline h-32"
                 id="message"
                 placeholder="Your Message"
                 {...register('message', { required: true })}

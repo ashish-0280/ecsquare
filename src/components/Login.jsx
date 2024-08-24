@@ -2,7 +2,7 @@ import React from 'react'
 import { useForm } from "react-hook-form"
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-
+import toast from 'react-hot-toast';
 function Login() {
   
   const navigate = useNavigate();
@@ -16,24 +16,21 @@ function Login() {
 const onSubmit = async (data) => {
     try{
       await axios.post('http://localhost:5000/user/login', data, {withCredentials: true});
-      alert("successfully Logged in");
-      window.location.href = "/";
-
+      toast.success("successfully Logged in");
     } catch(error){
+      toast.error('Incorrect Email or Password');
       res.status(400).json({message: 'Incorrect Email or Password'});
-      alert('Incorrect Email or Password');
-      window.location.href = "/";
-
+      
     }
   }
-  const handleLogout = async (data) => {
-    try{
-      await axios.post("http://localhost:5000/user/logout", data, {withCredentials: true});
-      alert("Logged out successfully");
-    } catch(error){
-      alert("Something went wrong!!");
-    }
-  }
+  // const handleLogout = async (data) => {
+  //   try{
+  //     await axios.post("http://localhost:5000/user/logout", data, {withCredentials: true});
+  //     alert("Logged out successfully");
+  //   } catch(error){
+  //     alert("Something went wrong!!");
+  //   }
+  // }
   return (
     <>
         <div>
@@ -69,7 +66,7 @@ const onSubmit = async (data) => {
     </div>
     <div className='flex flex-row'>
     <div className='w-auto h-auto p-2 rounded-md  bg-blue-500 hover:bg-blue-700 mt-6'>
-        <button>Login</button>
+        <button type='submit' >Login</button>
     </div>
     <div className='mt-4 ml-28 md:ml-64  hover:scale-105 duration-100'>
     <p>Not signed up? <br /><a href="/signup" className='text-blue-500 underline'>Signup</a></p>
