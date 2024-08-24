@@ -22,6 +22,9 @@ function About() {
           <span><h4>Join us at EC<sup>2</sup> and start your journey towards becoming the best version of yourself.</h4></span>
           </div>
         </div>
+        <div className='flex justify-center items-center mt-8'>
+            <button className='bg-orange-700 text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:shadow-outline' ><a href="/">Back</a></button>
+          </div>
         <Footer />
       </div>
     </>
