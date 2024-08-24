@@ -45,7 +45,7 @@ function Navbar() {
                 </ul>
             </div>
             <div className='hidden md:block'>
-                <label className="px-3 py-2 border rounded-md flex items-center gap-2">
+                <label className="px-2 py-1 border rounded-md flex items-center gap-2">
                 <input type="text" className="grow outline-none" placeholder="Search" />
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
