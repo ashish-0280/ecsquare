@@ -13,7 +13,7 @@ function Signup() {
     
       const onSubmit = async(data) => {
         try{
-            const response = await axios.post('http://localhost:5000/signup', data, {
+            const response = await axios.post('http://localhost:5000/user/signup', data, {
                 withCredentials: true,
             });
             alert("Signed up successfully, Now Login");
@@ -21,7 +21,7 @@ function Signup() {
            window.location.href = "/";
 
         } catch(error){
-            alert("Already Signed Up, Try to Login");
+            alert("Something went wrong, Try Login!!");
             console.error(error.response.data);
             window.location.href = "/";
         }
@@ -56,7 +56,7 @@ function Signup() {
                 {errors.password && <span className='text-red-600 text-sm'>This field is required</span>}
             </div>
             <div className='flex flex-row '>
-            <div className='bg-blue-600 h-auto w-auto rounded-md p-2 ml-4 m-8 mt-12'>
+            <div className='bg-blue-600 text-slate-300 h-auto w-auto rounded-md p-2 ml-4 m-8 mt-12'>
                 <button type='submit'>Sign up</button>
             </div>
             <div className='mt-12 ml-6 hover:scale-105 duration-100'>

@@ -2,6 +2,7 @@ import React from 'react'
 import { useForm } from "react-hook-form"
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+
 function Login() {
   
   const navigate = useNavigate();
@@ -14,7 +15,7 @@ function Login() {
 
 const onSubmit = async (data) => {
     try{
-      await axios.post('http://localhost:5000/login', data, {withCredentials: true});
+      await axios.post('http://localhost:5000/user/login', data, {withCredentials: true});
       alert("successfully Logged in");
       window.location.href = "/";
 
@@ -27,7 +28,7 @@ const onSubmit = async (data) => {
   }
   const handleLogout = async (data) => {
     try{
-      await axios.post("http://localhost:5000/logout", data, {withCredentials: true});
+      await axios.post("http://localhost:5000/user/logout", data, {withCredentials: true});
       alert("Logged out successfully");
     } catch(error){
       alert("Something went wrong!!");
@@ -49,7 +50,7 @@ const onSubmit = async (data) => {
         <input 
         type="email" 
         placeholder='user@gmail.com' 
-        className='rounded-md border px-3 py-1 outline-none'
+        className='rounded-md border-none px-3 py-1 outline-none'
         {...register("email", { required: true })}
         />
      
@@ -60,14 +61,14 @@ const onSubmit = async (data) => {
         <input 
         type="password" 
         placeholder='password' 
-        className='rounded-md border px-3 py-1 outline-none'
+        className='rounded-md border-none px-3 py-1 outline-none'
         {...register("password", { required: true })}
         />
         
         {errors.password && <span className='text-red-600 text-sm'>This field is required</span>}
     </div>
     <div className='flex flex-row'>
-    <div className='w-auto h-auto p-2 rounded-md  bg-blue-500 hover:bg-blue-700 text-white mt-6'>
+    <div className='w-auto h-auto p-2 rounded-md  bg-blue-500 hover:bg-blue-700 mt-6'>
         <button>Login</button>
     </div>
     <div className='mt-4 ml-28 md:ml-64  hover:scale-105 duration-100'>

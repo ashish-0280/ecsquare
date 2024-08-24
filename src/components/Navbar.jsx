@@ -1,4 +1,5 @@
 import React from 'react'
+import Logout from './Logout.jsx'
 import Login from './Login.jsx'
 function Navbar() {
     const nav = (
@@ -59,7 +60,9 @@ function Navbar() {
                 </svg>
                 </label>
             </div>
-            
+            {/* <div>
+                <Logout />
+            </div> */}
             <div>
                 <a className="bg-black text-white cursor-pointer px-3 py-2 rounded-md hover:bg-slate-800 duration-300"
                 onClick={()=>

@@ -3,7 +3,7 @@ import banner from '../../public/banner.png';
 function Banner() {
   return (
     <>
-      <div className='max-w-screen-2xl container mt-16 md:mt-32 mx-auto md:px-20 px-4 flex flex-col md:flex-row'>
+      <div className='max-w-screen-2xl container mt-10 md:mt-32 mx-auto md:px-20 px-4 flex flex-col md:flex-row'>
         <div className='w-full md:w-1/2 mt-4 md:mt-22 order-2 md:order-1 '>
         <div className='space-y-10 mt-20'>
         <h1 className='text-4xl font-bold mt-12'>Welcome, Unlock your potential with <span className='text-4xl mt-8 md:text-6xl text-blue-700 font-bold'>EC<sup>2</sup> !!!</span> </h1>
