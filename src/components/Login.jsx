@@ -19,7 +19,7 @@ const navigate = useNavigate();
       password: data.password,
     };
     await axios
-      .post("http://localhost:5000/user/login", UserInfo)
+      .post("https://backend-flax-two.vercel.app/user/login", UserInfo)
       .then((res) => {
         if (res.data) {
           toast.success("Loggedin Successfully");

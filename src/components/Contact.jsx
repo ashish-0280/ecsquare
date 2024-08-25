@@ -16,7 +16,7 @@ function Contact() {
 
   const onSubmit = async (data) => {
     try {
-        const response = await axios.post('http://localhost:5000/user/send', data, {
+        const response = await axios.post('https://backend-flax-two.vercel.app/user/send', data, {
             withCredentials: true,
         });
         toast.success("Sent successfully!!");
