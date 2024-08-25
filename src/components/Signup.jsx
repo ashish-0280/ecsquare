@@ -20,7 +20,7 @@ function Signup() {
       password: data.password,
     };
     await axios
-      .post("https://backend-ecsquare.vercel.app/user/signup", userInfo)
+      .post("http://localhost:5000/user/signup", userInfo)
       .then((res) => {
         if (res.data) {
           toast.success("Signup Successfully");
