@@ -16,7 +16,7 @@ function Contact() {
 
   const onSubmit = async (data) => {
     try {
-        const response = await axios.post('http://localhost:5000/user/send', data, {
+        const response = await axios.post('https://myecapp-bafw7f1a.b4a.run/user/send', data, {
             withCredentials: true,
         });
         toast.success("Sent successfully!!");

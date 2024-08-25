@@ -19,7 +19,7 @@ const navigate = useNavigate();
       password: data.password,
     };
     await axios
-      .post("http://localhost:5000/user/login", UserInfo)
+      .post("https://myecapp-bafw7f1a.b4a.run/user/login", UserInfo)
       .then((res) => {
         if (res.data) {
           toast.success("Loggedin Successfully");
