@@ -19,7 +19,7 @@ const navigate = useNavigate();
       password: data.password,
     };
     await axios
-      .post("https://ecsquarebackend.vercel.app/user/login", UserInfo)
+      .post("https://backend-ecsquare.vercel.app/user/login", UserInfo)
       .then((res) => {
         if (res.data) {
           toast.success("Loggedin Successfully");
