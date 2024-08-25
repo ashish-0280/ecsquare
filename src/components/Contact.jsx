@@ -43,7 +43,7 @@ function Contact() {
         <div className='h-screen mt-32'>
           <form onSubmit={handleSubmit(onSubmit)} className="max-w-lg mx-auto p-6 bg-zinc-800 shadow-md rounded-lg">
             <div className="mb-4">
-              <label className="block text-slate-800 text-sm font-bold mb-2" htmlFor="name">
+              <label className="block text-sm font-bold mb-2" htmlFor="name">
                 Name
               </label>
               <input
