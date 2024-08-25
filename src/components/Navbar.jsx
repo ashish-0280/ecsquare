@@ -1,7 +1,9 @@
 import React from 'react'
 import Logout from './Logout.jsx'
 import Login from './Login.jsx'
+import {useAuth} from '../context/AuthProvider.jsx';
 function Navbar() {
+    const [authUser, setAuthUser] = useAuth()
     const nav = (
         <>
                     <li><a href='/'>Home</a></li>
@@ -60,9 +62,8 @@ function Navbar() {
                 </svg>
                 </label>
             </div>
-            {/* <div>
-                <Logout />
-            </div> */}
+            {authUser ? (
+               <Logout /> ): (
             <div>
                 <a className="bg-black text-white cursor-pointer px-3 py-2 rounded-md hover:bg-slate-800 duration-300"
                 onClick={()=>
@@ -71,6 +72,8 @@ function Navbar() {
                     Login</a>
                     <Login />
             </div>
+               )
+            }
             </div>
             </div>
         </div>

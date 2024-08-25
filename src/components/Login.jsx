@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 function Login() {
   
-  const navigate = useNavigate();
+const navigate = useNavigate();
   
   const {
     register,
@@ -13,24 +13,31 @@ function Login() {
     formState: { errors },
   } = useForm()
 
-const onSubmit = async (data) => {
-    try{
-      await axios.post('http://localhost:5000/user/login', data, {withCredentials: true});
-      toast.success("successfully Logged in");
-    } catch(error){
-      toast.error('Incorrect Email or Password');
-      res.status(400).json({message: 'Incorrect Email or Password'});
-      
-    }
-  }
-  // const handleLogout = async (data) => {
-  //   try{
-  //     await axios.post("http://localhost:5000/user/logout", data, {withCredentials: true});
-  //     alert("Logged out successfully");
-  //   } catch(error){
-  //     alert("Something went wrong!!");
-  //   }
-  // }
+  const onSubmit = async (data) => {
+    const UserInfo = {
+      email: data.email,
+      password: data.password,
+    };
+    await axios
+      .post("http://localhost:5000/user/login", UserInfo)
+      .then((res) => {
+        if (res.data) {
+          toast.success("Loggedin Successfully");
+          document.getElementById("my_modal_3").close();
+          setTimeout(() => {
+            window.location.reload();
+            localStorage.setItem("UserInfo", JSON.stringify(res.data.user));
+          }, 1000);
+        }
+      })
+      .catch((err) => {
+        if (err.response) {
+          console.log(err.message);
+          toast.error('Email or password is incorrect, Try Again!!');
+          setTimeout(() => {}, 2000);
+        }
+      });
+  };
   return (
     <>
         <div>

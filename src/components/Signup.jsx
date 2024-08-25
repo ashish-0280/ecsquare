@@ -1,29 +1,40 @@
 import React from 'react'
-import { useState } from 'react'
 import { useForm } from "react-hook-form"
+import { useLocation, useNavigate } from "react-router-dom";
 import toast from 'react-hot-toast';
 import axios from 'axios'
 function Signup() {
-    const [message, setMessage] = useState('');
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-      } = useForm()
-    
-      const onSubmit = async(data) => {
-        try{
-            const response = await axios.post('http://localhost:5000/user/signup', data, {
-                withCredentials: true,
-            });
-           console.log(response.data);
-           toast.success("Signed up successfully, Now Login");
+    const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from?.pathname || "/";
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-        } catch(error){
-            toast.error("Something went wrong, Try Login!!");
-            console.error(error.response.data);
+  const onSubmit = async (data) => {
+    const userInfo = {
+      fullname: data.fullname,
+      email: data.email,
+      password: data.password,
+    };
+    await axios
+      .post("http://localhost:5000/user/signup", userInfo)
+      .then((res) => {
+        if (res.data) {
+          toast.success("Signup Successfully");
+          navigate(from, { replace: true });
         }
-      }
+        localStorage.setItem("Users", JSON.stringify(res.data.user));
+      })
+      .catch((err) => {
+        if (err.response) {
+          console.log(err);
+          toast.error("Error: " + err.response.data.message);
+        }
+      });
+    }
   return (
     <>
     <div>
