@@ -20,7 +20,7 @@ function Signup() {
       password: data.password,
     };
     await axios
-      .post("https://backend-flax-two.vercel.app/user/signup", userInfo)
+      .post("https://ecsquarebackend.vercel.app/user/signup", userInfo)
       .then((res) => {
         if (res.data) {
           toast.success("Signup Successfully");
