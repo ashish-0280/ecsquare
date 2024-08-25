@@ -20,7 +20,7 @@ function Signup() {
       password: data.password,
     };
     await axios
-      .post("http://localhost:5000/user/signup", userInfo)
+      .post("https://myecapp-bafw7f1a.b4a.run/user/signup", userInfo)
       .then((res) => {
         if (res.data) {
           toast.success("Signup Successfully");
