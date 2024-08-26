@@ -34,7 +34,7 @@ function Navbar() {
                 </div>
                 <ul
                     tabIndex={0}
-                    className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                    className="menu menu-sm dropdown-content text-lg bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                     {nav}
     
                 </ul>
@@ -43,7 +43,7 @@ function Navbar() {
             </div>
             <div className="navbar-end space-x-5">
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
+                <ul className="menu menu-horizontal px-1 text-base">
                 {nav}
                 </ul>
             </div>
@@ -65,7 +65,7 @@ function Navbar() {
             {authUser ? (
                <Logout /> ): (
             <div>
-                <a className="bg-black text-white cursor-pointer px-3 py-2 rounded-md hover:bg-slate-800 duration-300"
+                <a className="bg-green-500 text-white cursor-pointer px-3 py-2 rounded-md hover:bg-slate-800 duration-300"
                 onClick={()=>
                     document.getElementById("my_modal_3").showModal()
                 }>
